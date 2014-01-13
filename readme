@@ -10,14 +10,14 @@ query.dynamically.weighted.grades(grades, percent = 20, base.weights = FALSE, ra
 
 Arguments
 
-grades        	a data frame containing grades
-percent       	the difference in percent between the best and worst
-				assignment (default 20)
-base.weights  	a numeric vector containing the base weights for your grades.
-				the default (FALSE) assumes that all assignments are weighted
-				equally to begin with
-raw.weights   	setting this to TRUE will return the dynamic weights as opposed
-				to the mean computed with these weights
+grades          a data frame containing grades
+percent         the difference in percent between the best and worst
+                assignment (default 20)
+base.weights    a numeric vector containing the base weights for your grades.
+                the default (FALSE) assumes that all assignments are weighted
+                equally to begin with
+raw.weights     setting this to TRUE will return the dynamic weights as opposed
+                to the mean computed with these weights
 
 Details
 
