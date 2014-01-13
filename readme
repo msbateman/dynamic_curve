@@ -1,0 +1,39 @@
+query.dynamically.weighted.grades
+
+Description
+
+Individually weight a set of student grades, weighting assignments that each particular student's better assignments more than his or her worse assignments.
+
+Usage
+
+query.dynamically.weighted.grades(grades, percent = 20, base.weights = FALSE, raw.weights = FALSE)
+
+Arguments
+
+grades        	a data frame containing grades
+percent       	the difference in percent between the best and worst
+				assignment (default 20)
+base.weights  	a numeric vector containing the base weights for your grades.
+				the default (FALSE) assumes that all assignments are weighted
+				equally to begin with
+raw.weights   	setting this to TRUE will return the dynamic weights as opposed
+				to the mean computed with these weights
+
+Details
+
+The first argument should be a data frame consisting exclusively of grades (so exclude the names column).
+
+Examples
+
+final_grades<-query.dynamically.weighted.grades(grades)
+
+# with a shallower adjustment
+final_grades<-query.dynamically.weighted.grades(grades, 10)
+
+# with four equally weighted papers and a more heavily weighted final exam
+weights<-c(20, 20, 20, 40)
+final_grades<-query.dynamically.weighted.grades(grades, 20, weights)
+
+# same as above, to answer a student when a student she asks to what her
+# assignments weights came out
+query.dynamically.weighted.grades(grades, 20, weights, TRUE)
